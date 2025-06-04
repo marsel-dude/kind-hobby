@@ -1,7 +1,10 @@
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import { 
-  APIResponse, APIError, CreateUserData, 
-  UpdateUserData, User, EventDonation 
+import {
+  APIResponse,
+  CreateUserData,
+  UpdateUserData,
+  User,
+  EventDonation
 } from '../types/api';
 import { z } from 'zod';
 

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Shield, Mail, MapPin, Link, User } from 'lucide-react';
 
+export interface PrivacySettingsState {
+  showEmail: boolean;
+  showLocation: boolean;
+  showSocial: boolean;
+  showFullName: boolean;
+}
+
 interface PrivacySettingsProps {
-  settings: {
-    showEmail: boolean;
-    showLocation: boolean;
-    showSocial: boolean;
-    showFullName: boolean;
-  };
-  onChange: (settings: any) => void;
+  settings: PrivacySettingsState;
+  onChange: (settings: PrivacySettingsState) => void;
   disabled?: boolean;
 }
 

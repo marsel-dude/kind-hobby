@@ -7,7 +7,7 @@ interface FormFieldProps {
   type?: string;
   placeholder?: string;
   error?: FieldError;
-  register: UseFormRegister<any>;
+  register: UseFormRegister<Record<string, unknown>>;
   className?: string;
   required?: boolean;
 }

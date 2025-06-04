@@ -2,8 +2,17 @@ import React from 'react';
 import { CheckCircle, AlertCircle } from 'lucide-react';
 import { useProfileCompleteness } from '../../hooks/useProfileCompleteness';
 
+export interface ProfileCompletenessData {
+  display_name?: string;
+  bio?: string;
+  hobbies?: string[];
+  skills?: string[];
+  avatar_url?: string;
+  social?: Record<string, string>;
+}
+
 interface CompletenessIndicatorProps {
-  profileData: any;
+  profileData: ProfileCompletenessData;
   onSectionClick?: (section: string) => void;
 }
 

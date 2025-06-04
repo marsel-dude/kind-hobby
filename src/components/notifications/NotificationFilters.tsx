@@ -1,18 +1,20 @@
 import React from 'react';
 import { Filter, Search, Calendar } from 'lucide-react';
 
-interface NotificationFiltersProps {
-  filters: {
-    search: string;
-    dateRange: {
-      start: string;
-      end: string;
-    };
-    priority: string[];
-    category: string[];
-    status: 'all' | 'read' | 'unread';
+export interface NotificationFilterState {
+  search: string;
+  dateRange: {
+    start: string;
+    end: string;
   };
-  onChange: (filters: any) => void;
+  priority: string[];
+  category: string[];
+  status: 'all' | 'read' | 'unread';
+}
+
+interface NotificationFiltersProps {
+  filters: NotificationFilterState;
+  onChange: (filters: NotificationFilterState) => void;
 }
 
 export function NotificationFilters({ filters, onChange }: NotificationFiltersProps) {

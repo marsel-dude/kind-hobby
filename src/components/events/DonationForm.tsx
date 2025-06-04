@@ -43,9 +43,11 @@ export function DonationForm({ eventId, onSuccess }: DonationFormProps) {
       toast.success('Thank you for your donation!');
       reset();
       onSuccess?.();
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Donation error:', err);
-      setError(err.message || 'Failed to process donation');
+      const message =
+        err instanceof Error ? err.message : 'Failed to process donation';
+      setError(message);
     }
   };
 
